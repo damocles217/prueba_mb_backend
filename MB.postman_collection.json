@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "aec313d9-12cb-4ef8-88aa-864c65482050",
+		"name": "MB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27691754"
+	},
+	"item": [
+		{
+			"name": "Auth register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=142163DB8EEA326F89600E126E0606AE",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@test.com\",\n    \"password\": \"test123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Provider API Pokemon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI1YTk5ZTVjOS03NmQzLTRiZDUtODkzYi1jNDUxZTQwZDAxOTgiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwiaWQiOiI4NjU5NDU1MS05Y2JkLTRjZGMtYTNlMy1lMGU0ZGQ4MTNkY2QiLCJleHAiOjE3MDI2NDk4NzksImVtYWlsIjoidGVzdEB0ZXN0LmNvbSJ9.rLh0mURQOOhG4PkzkMNb_0ml4gSgq5XRslfLSewIetYwpFD-E6C-nGOL3tDMQ5u6eXR1m3nlGgb_oEjpfbsmw_e-c9xhcWOYMs4ZCR0Q3pIoHhQl0yYcYbgO0meahLVA8XfM965OHGFgNk9p0_SfX94v3ChIad-emU25DWMRxVQ0cBMDBFKui3QjRmrXc2NMVLVrV7DjX0DGIRoaPrE4B8i3-sE_2a63AZmDMHRpCzG9fr3jhJlkY-tRsIBHwS0BboRrxNROjS8YOasW5N1PJ_2KGhnxXtAVfumGYhzOJa6ReTTTBtxnQJK44cUj1l6UVvon-x1hetKMvCHls6AswA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/poke-get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"poke-get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crypter text",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI1YTk5ZTVjOS03NmQzLTRiZDUtODkzYi1jNDUxZTQwZDAxOTgiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwiaWQiOiI4NjU5NDU1MS05Y2JkLTRjZGMtYTNlMy1lMGU0ZGQ4MTNkY2QiLCJleHAiOjE3MDI2NDk4NzksImVtYWlsIjoidGVzdEB0ZXN0LmNvbSJ9.rLh0mURQOOhG4PkzkMNb_0ml4gSgq5XRslfLSewIetYwpFD-E6C-nGOL3tDMQ5u6eXR1m3nlGgb_oEjpfbsmw_e-c9xhcWOYMs4ZCR0Q3pIoHhQl0yYcYbgO0meahLVA8XfM965OHGFgNk9p0_SfX94v3ChIad-emU25DWMRxVQ0cBMDBFKui3QjRmrXc2NMVLVrV7DjX0DGIRoaPrE4B8i3-sE_2a63AZmDMHRpCzG9fr3jhJlkY-tRsIBHwS0BboRrxNROjS8YOasW5N1PJ_2KGhnxXtAVfumGYhzOJa6ReTTTBtxnQJK44cUj1l6UVvon-x1hetKMvCHls6AswA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Esta es una prueba tecnica para MB\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/crypter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"crypter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"email\": \"test@test.com\",\n    \"password\": \"test123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI1YTk5ZTVjOS03NmQzLTRiZDUtODkzYi1jNDUxZTQwZDAxOTgiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwiaWQiOiI4NjU5NDU1MS05Y2JkLTRjZGMtYTNlMy1lMGU0ZGQ4MTNkY2QiLCJleHAiOjE3MDI2NDk1MTgsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSJ9.OHjzVP6usI0sQrC89BIyQVYwfb2HglO69b7IWWu-fzSk7jJIBC3l20Ves0uk7f3VbA5Xhqcea3ZyxbEHtbY8hbiskgLNKZu1248A9zar5___M6DYNjp7pM1Evnuy-5tvqr0WJGKLr55ggG-1Iq849dejZeYyfDexExXh2DTvvQOnYbZ9z0mObhagw-G1Frk_mRhLzQtXXG7RkJJY5ZHUzoCaWC_ChVnyFJEDrqkh81ymFtdzMYQ-WwmmTV8pDSVLcJsSG_uSmHTrQH5BiI-hh2FAllMIYybl1BK_79pHIno3D6yIoz2IpIJSmhDOH_Gf5MFmW3-e2Lm1b-ZH404IZg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Post 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
