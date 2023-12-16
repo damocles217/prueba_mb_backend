@@ -1,5 +1,6 @@
 package com.rest.api.post;
 
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +29,27 @@ public class PostController {
 
   @PostMapping
   public List<PostEntity> getFilteredPostByName(@RequestBody PostEntity post) {
-    if (post.getName() == "" || post.getName() == null) {
+    Field[] postFields = post.getClass().getDeclaredFields();
+    Boolean isNotEmptyBody = Arrays
+      .stream(postFields)
+      .anyMatch(field -> {
+        field.setAccessible(true);
+        try {
+          return field.get(post) != null;
+        } catch (IllegalAccessException e) {
+          return false;
+        }
+      });
+
+    if (!isNotEmptyBody) {
       return postRepository.findAll();
     }
-    List<PostEntity> posts = postRepository.findByNameLike(post.getName());
+
+    List<PostEntity> posts = postRepository.findByNameLikeOrDescriptionLike(
+      post.getName(),
+      post.getDescription()
+    );
+
     return posts;
   }
 }
