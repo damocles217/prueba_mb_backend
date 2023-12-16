@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PostRepository extends JpaRepository<PostEntity, String> {
   @Query(
-    "SELECT * FROM post WHERE name LIKE %:name% OR description LIKE %:description% LIMIT 1"
+    "SELECT * FROM post WHERE name LIKE %:name% OR description LIKE %:description%"
   )
   List<PostEntity> findByNameLikeOrDescriptionLike(
     String name,
